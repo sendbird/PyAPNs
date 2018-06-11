@@ -272,7 +272,7 @@ class APNsConnection(object):
     def write(self, string):
         if self.enhanced: # nonblocking socket
             self._last_activity_time = time.time()
-	    writeable = _wait_for_socket(self._connection(), WAIT_WRITE, WAIT_WRITE_TIMEOUT_SEC)
+            writeable = _wait_for_socket(self._connection(), WAIT_WRITE, WAIT_WRITE_TIMEOUT_SEC)
 
             if writeable:
                 length = self._connection().sendall(string)
